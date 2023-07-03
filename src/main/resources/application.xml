@@ -1,7 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--IOC配置-->
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
-<!--beam实例，id是唯一标识符-->
+    <!--所谓的懒加载机制就是：
+        可以规定指定的bean在启动时不会立即创建，而是在后续第一次用到时才创建**，从而减轻在spring启动过程中对时间和内存的消耗。
+        懒加载机制只对单例bean有作用，对于多例bean设置懒加载没有意义。-->
+    <!--如果同时设定全局和指定bean的懒加载机制，且配置不相同，则对于该bean局部配置覆盖全局配置(就近原则)。-->
+    <!--全局配置懒加载-->
+    <!--在beans中添加：default-lazy-init="true"-->
+
+    <!--bean实例，id是唯一标识符-->
+    <!--spring容器默认情况下是单例的(scope="singleton")，也就是说一个bean只会创建一个对象，存在内置map中，之后无论获取多少次该bean，都返回同一个对象-->
     <bean id="stu1" class="com.edu.ioc.entity.Student"></bean>
+
+    <!--多例模式-->
+    <!--bean在多例模式下，spring容器启动时解析xml发现该bean标签后，只是将该bean进行管理，并不会创建对象，
+    此后每次使用 getBean()获取该bean时，spring都会创建新的对象返回，每次都是一个新的对象。-->
+    <bean id="stu2" class="com.edu.ioc.entity.Student" scope="prototype"></bean>
+
+    <!--局部配置懒加载-->
+<!--    <bean id="stu3" class="com.edu.ioc.entity.Student" lazy-init="true"></bean>-->
+
+    <bean id="computer" class="com.edu.ioc.entity.Computer"
+          init-method="init" destroy-method="destory">
+
+    </bean>
 </beans>

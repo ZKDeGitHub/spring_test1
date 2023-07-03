@@ -5,7 +5,7 @@ public class Student {
     private String name;
 
     public Student() {
-        System.out.println("无参构造执行了");
+        System.out.println("Student无参构造执行了");
     }
 
     public int getId() {
@@ -23,12 +23,5 @@ public class Student {
     public void setName(String name) {
         this.name = name;
     }
-
-    @Override
-    public String toString() {
-        return "Student{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                '}';
-    }
 }
+

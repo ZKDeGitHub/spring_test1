@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--set的 引用对象 注入-->
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
-
+<bean id="smStudent" class="com.edu.di.entity.SMStuden">
+    <property name="id" value="1001"></property>
+    <property name="name" value="zk"></property>
+    <!--使用ref 引用待注入的bean-->
+    <property name="computer" ref="computer"></property>
+</bean>
+<bean id="computer" class="com.edu.di.entity.Computer">
+    <property name="brand" value="华为"></property>
+    <property name="price" value="52.00"></property>
+</bean>
 </beans>
-<!--引用对象注入-->

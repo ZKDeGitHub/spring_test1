@@ -1,6 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--基本类型注入-->
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
-    <!--基本类型注入-->
+<bean id="teacher" class="com.edu.di.entity.Teacher">
+    <property name="id" value="1001"></property>
+    <property name="password" value="123456"/>
+    <property name="gender" value="male"/>
+    <property name="age" value="20"/>
+    <!--注意日期格式"/"-->
+    <property name="birthday" value="1990/1/1 12:12:12"/>
+    <!--数组-->
+    <property name="hobbies">
+        <array>
+            <value>Run</value>
+            <value>Swim</value>
+            <value>Climb</value>
+        </array>
+    </property>
+    <!--set集合-->
+    <property name="phones">
+        <set>
+            <value>13777777777</value>
+            <value>13888888888</value>
+            <value>13999999999</value>
+        </set>
+    </property>
+    <!--list集合-->
+    <property name="names">
+        <list>
+            <value>tom</value>
+            <value>jack</value>
+            <value>marry</value>
+        </list>
+    </property>
+    <!--map-->
+    <property name="countries">
+        <map>
+            <entry key="CN" value="China"/>
+            <entry key="US" value="America"/>
+            <entry key="KR" value="Korea"/>
+        </map>
+    </property>
+    <!--properties-->
+    <property name="files">
+        <props>
+            <prop key="first">One</prop>
+            <prop key="second">Two</prop>
+            <prop key="third">Three</prop>
+        </props>
+    </property>
+
+</bean>
 </beans>

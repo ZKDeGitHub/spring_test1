@@ -3,14 +3,14 @@ package com.edu.diTest.dao.impl;
 import com.edu.diTest.dao.StudenDao;
 
 public class StudentDaoImpl implements StudenDao {
-    @Override
-    public int addStudent() {
 
-        return 0;
+    @Override
+    public void insertStudent() {
+        System.out.println("开始向数据库插入学生信息");
     }
 
     @Override
-    public void removeStudent(int id) {
-
+    public void deleteStudent(int id) {
+        System.out.println("开始向数据库删除学生信息");
     }
 }
