@@ -10,21 +10,21 @@
     <!--在applicationContext.xml中添加default-autowire,属性值可以选择byName和byType-->
     <!--当同时有全局装配和局部装配时，采用就近原则-->
 
-    <bean id="smStudent" class="com.edu.di.entity.SMStuden" autowire="byName">
+    <bean id="smStudent" class="com.edu.day0703.di.entity.SMStuden" autowire="byName">
         <property name="id" value="1001"></property>
         <property name="name" value="zk"></property>
         <!--此处省略了computer的property配置，
         配置了autowire="byName"，会根据computer自动寻找对应的id-->
         <!--byName根据名称进行自动注入 成员变量(属性)的名称和bean的id值保持一致-->
     </bean>
-    <bean id="smStudent2" class="com.edu.di.entity.SMStuden" autowire="byType">
+    <bean id="smStudent2" class="com.edu.day0703.di.entity.SMStuden" autowire="byType">
         <property name="id" value="1001"></property>
         <property name="name" value="zk"></property>
         <!--byType:根据javabean中需要注入的属性的类型，在spring容器中找对应class类型的<bean>将该<bean>的对象复制给 当前的属性
             byType方式 根据类型进行匹配，可能匹配到多个<bean>,此时会抛出异常。
             而byName是通过id来寻找<bean>，id没有重复，不会有这方面的问题，所以推荐使用byName方式-->
     </bean>
-    <bean id="computer" class="com.edu.di.entity.Computer">
+    <bean id="computer" class="com.edu.day0703.di.entity.Computer">
         <property name="brand" value="小米"></property>
         <property name="price" value="54.00"></property>
     </bean>

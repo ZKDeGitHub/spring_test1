@@ -4,11 +4,11 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
     <!--注入studentService-->
-    <bean id="studentService" class="com.edu.diTest.service.impl.StudentServiceImpl">
+    <bean id="studentService" class="com.edu.day0703.diTest.service.impl.StudentServiceImpl">
         <!--引用对象注入-->
         <property name="studenDao" ref="studentDao"></property>
     </bean>
 
     <!--注入-->
-    <bean id="studentDao" class="com.edu.diTest.dao.impl.StudentDaoImpl"></bean>
+    <bean id="studentDao" class="com.edu.day0703.diTest.dao.impl.StudentDaoImpl"></bean>
 </beans>
