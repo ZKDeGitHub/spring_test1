@@ -5,6 +5,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
+import java.util.Date;
+
 
 /**
  * @Author zk
@@ -18,7 +20,7 @@ import java.time.LocalDate;
 public class User {
     private long id;
     private String userName;
-    private LocalDate birthday;
+    private Date birthday;
     private String gender;
     private String address;
 }
