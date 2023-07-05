@@ -8,6 +8,12 @@ import org.springframework.stereotype.Component;
 
 import java.util.Arrays;
 
+/**
+ * @author:zk
+ * @date: 2023/7/4 17:22
+ * @since: 11
+ * 注释：注解方式使用举例
+ */
 //声明spring容器管理
 @Component
 //声明是切面类
@@ -22,18 +28,18 @@ public class SecondAspect {
     @Before("pc()")
     public void before(JoinPoint joinPoint){
         Object target = joinPoint.getTarget();
-        System.out.println(target.getClass());
+        System.out.println("before的getClass：" + target.getClass());
         Object[] args = joinPoint.getArgs();
-        System.out.println(Arrays.toString(args));
+        System.out.println("before的getArgs：" + Arrays.toString(args));
 
         MethodSignature signature = (MethodSignature) joinPoint.getSignature();
         // 获取异常类型
-        System.out.println(signature.getExceptionTypes());
+        System.out.println("before的异常类型：" + signature.getExceptionTypes());
         // 获取返回值类型
-        System.out.println(signature.getReturnType());
+        System.out.println("before的返回值类型：" + signature.getReturnType());
         // 获取方法
-        System.out.println(signature.getMethod());
-        System.out.println("前置通知执行了");
+        System.out.println("before的方法：" + signature.getMethod());
+        System.out.println("before的前置通知执行了");
 
     }
 
@@ -50,13 +56,13 @@ public class SecondAspect {
      */
     @Around("pc()")
     public Object around(ProceedingJoinPoint joinPoint) throws Throwable {
-        System.out.println("前 环绕通知");
+        System.out.println("around：前 环绕通知");
 
         // 此为方法执行完毕后的返回结果
         Object o = joinPoint.proceed();
-        System.out.println("执行后的结果："+ o);
+        System.out.println("around：执行后的结果："+ o);
 
-        System.out.println("后 环绕通知");
+        System.out.println("around：后 环绕通知");
         return null;
     }
 
@@ -69,8 +75,8 @@ public class SecondAspect {
     public void afterReturn(JoinPoint joinPoint,Object re){
         //可以接受方法执行的时候传递的参数值
         System.out.println(Arrays.toString(joinPoint.getArgs()));
-        System.out.println("获取方法的返回值：" + re);
-        System.out.println("后置通知执行是在方法执行完毕后");
+        System.out.println("afterReturn获取方法的返回值：" + re);
+        System.out.println("afterReturn后置通知执行是在方法执行完毕后");
 
     }
 
@@ -81,8 +87,8 @@ public class SecondAspect {
      */
     @AfterThrowing(value = "pc()",throwing = "e")
     public void afterThrow(JoinPoint joinPoint,Exception e){
-        System.out.println("前面异常通知执行了");
-        System.out.println("获取到的异常信息是" + e.toString());
+        System.out.println("afterThrow前面异常通知执行了");
+        System.out.println("afterThrow获取到的异常信息是" + e.toString());
     }
 
     /**
@@ -91,6 +97,6 @@ public class SecondAspect {
      */
     @After("pc()")
     public void after(JoinPoint joinPoint){
-        System.out.println("最终通知执行了");
+        System.out.println("after最终通知执行了");
     }
 }
