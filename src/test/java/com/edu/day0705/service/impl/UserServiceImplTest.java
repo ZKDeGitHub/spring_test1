@@ -29,10 +29,6 @@ public class UserServiceImplTest {
     userService.queryById(10007);
    }
 
-   @org.junit.Test
-   public void method1(){
-      userService.removeUser(10007);
 
-   }
 
 }

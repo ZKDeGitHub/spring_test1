@@ -12,10 +12,12 @@ public interface UserService {
 
     void queryById(int id);
 
+/*
     int addUser(User user);
 
     int editUser(User user);
 
     int removeUser(int id);
+*/
 
 }

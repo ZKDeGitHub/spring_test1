@@ -19,11 +19,10 @@ import javax.sql.DataSource;
 @Configuration //表明当前类是一个配置类，相当于载入xml头文件
 @ComponentScan("com.edu.day0705") // 开启包扫描
 @MapperScan("com.edu.day0705.mapper") //载入mapper文件
-@PropertySource("db.properties")
+/*@PropertySource("db.properties")
 @EnableAspectJAutoProxy //开启aop注解
-@EnableTransactionManagement //开启事务注解
+@EnableTransactionManagement //开启事务注解*/
 public class SpringConfig {
-
     @Value("${driverClassName}")
     private String driverClassName;
     @Value("${url}")

@@ -16,7 +16,7 @@ public class Tset {
         //注解方式获取容器的方法
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(SpringConfig.class);
 
-        UserService bean = context.getBean("userServiceImpl", UserService.class);
+        UserService bean = context.getBean(UserService.class);
         bean.addUser(10,"test");
 
     }

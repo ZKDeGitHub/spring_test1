@@ -3,7 +3,7 @@ package com.edu.day0704.exercise6.service.impl;
 import com.edu.day0704.exercise6.service.UserService;
 import org.springframework.stereotype.Service;
 
-@Service("userServiceImpl")
+@Service
 public class UserServiceImpl implements UserService {
 
     @Override

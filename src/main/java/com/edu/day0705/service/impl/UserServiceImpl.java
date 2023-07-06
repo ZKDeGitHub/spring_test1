@@ -16,33 +16,36 @@ import javax.annotation.Resource;
 @Service
 public class UserServiceImpl implements UserService {
 
+/*
     @Resource // 交给spring创建此bean
     UserMapper userMapper;
+*/
 
     @Override
     public void queryById(int id) {
-        userMapper.selectById(id);
+        System.out.println("UserServiceImpl.queryById()：" + id);
+
     }
 
-    @Override
+   /* @Override
     public int addUser(User user) {
-/*        int i = userMapper.insertUser(user);
-        return i;*/
+*//*        int i = userMapper.insertUser(user);
+        return i;*//*
         System.out.println("UserServiceImpl的addUser执行了");
         return 0;
     }
 
     @Override
     public int editUser(User user) {
-        int i = userMapper.updateUser(user);
-        return i;
+        return 0;
+
     }
 
     @Override
     public int removeUser(int id) {
         System.out.println("UserServiceImpl的removeUser执行了");
-/*        int i = userMapper.deleteUser(id);
-        return i;*/
+*//*        int i = userMapper.deleteUser(id);
+        return i;*//*
         return 0;
-    }
+    }*/
 }
