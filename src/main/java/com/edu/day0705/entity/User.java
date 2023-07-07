@@ -20,7 +20,7 @@ import java.util.Date;
 public class User {
     private long id;
     private String userName;
-    private Date birthday;
+    private LocalDate birthday;
     private String gender;
     private String address;
 }

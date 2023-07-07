@@ -18,15 +18,18 @@ import static org.junit.Assert.*;
  * @date: 2023/07/05/23:07
  * @since: 11
  */
-@RunWith(SpringJUnit4ClassRunner.class) //测试依赖包
-@ContextConfiguration(classes = SpringConfig.class) //声明配置文件位置
+
+/*@RunWith(SpringJUnit4ClassRunner.class) //测试依赖包
+@ContextConfiguration(classes = SpringConfig.class) //声明配置文件位置*/
+@RunWith(SpringJUnit4ClassRunner.class)
+@ContextConfiguration(classes = {SpringConfig.class})
 public class UserServiceImplTest {
    @Resource
    private UserService userService;
 
-   @org.junit.Test
+   @Test
    public void queryById() {
-    userService.queryById(10007);
+      System.out.println(userService.queryById(10001));
    }
 
 

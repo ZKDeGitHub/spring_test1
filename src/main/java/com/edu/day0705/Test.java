@@ -14,6 +14,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
  */
 public class Test {
    public static void main(String[] args) {
+
       //注解方式获取容器的方法
       AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(SpringConfig.class);
       UserService bean = context.getBean(UserService.class);

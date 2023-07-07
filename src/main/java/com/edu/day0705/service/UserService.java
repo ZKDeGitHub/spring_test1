@@ -10,14 +10,12 @@ import com.edu.day0705.entity.User;
  */
 public interface UserService {
 
-    void queryById(int id);
+    User queryById(int id);
 
-/*
     int addUser(User user);
 
     int editUser(User user);
 
-    int removeUser(int id);
-*/
+    int removeUser(long id);
 
 }
